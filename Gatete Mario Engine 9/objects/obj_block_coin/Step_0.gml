@@ -29,8 +29,6 @@ if ((vspeed > 0) && (y > ystart)) {
 		
 		//P-Coins
 		case (spr_coin_npc_p):
-		case (spr_coin_star_p):
-		
 			#region EFFECT
 
 				//Repeat 6 times
@@ -46,7 +44,7 @@ if ((vspeed > 0) && (y > ystart)) {
 				}
 
 				//Create ring
-				with (instance_create_depth(x, y + 8, -2, obj_blend_ring)) image_blend = make_colour_rgb(112, 216, 248);
+				with (instance_create_depth(x, y + 8, -2, obj_blend_ring)) image_blend = make_colour_rgb(248, 216, 0);
 	
 			#endregion
 			break;

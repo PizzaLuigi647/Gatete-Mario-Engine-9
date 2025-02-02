@@ -7,7 +7,4 @@ event_inherited();
 vulnerable = 1;
 
 //Turn on ledges
-turn_on_ledges = 1;
-
-//Move towards Mario
-alarm[10] = 2;
+turn_on_ledges = true;

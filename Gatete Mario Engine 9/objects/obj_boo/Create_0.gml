@@ -18,6 +18,3 @@ ignore_platforms = true;
 //Whether the enemy is moving
 movenow = 0;
 movenowprev = 0;
-
-//Face towards Mario
-alarm[10] = 2;

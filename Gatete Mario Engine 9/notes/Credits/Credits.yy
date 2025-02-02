@@ -3,8 +3,8 @@
   "%Name":"Credits",
   "name":"Credits",
   "parent":{
-    "name":"GateteMarioEngine9",
-    "path":"GateteMarioEngine9.yyp",
+    "name":"SuperMarioFlashAndyAced-NEW",
+    "path":"SuperMarioFlashAndyAced-NEW.yyp",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

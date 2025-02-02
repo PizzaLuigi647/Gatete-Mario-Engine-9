@@ -1,4 +1,4 @@
-/// @description Become vulnerable
+/// @description Become invulnerable
 
 //Set the sprite
 sprite_index = spr_birdo;
