@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"load",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load",
+  "parent":{
+    "name":"Progress",
+    "path":"folders/Scripts/System/Events/Progress.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
