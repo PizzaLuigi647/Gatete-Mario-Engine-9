@@ -17,12 +17,8 @@ if (status == mapstate.idle)
         //If there's a panel, print the name on the HUD
         if (panel) {
 			
-			//Adquire level information
-			obj_hud_map.levelname = string_upper(panel.levelname);
-			
-			//Only set information when it is necessary
-			if (obj_hud_map.levelid != panel.levelid)
-				obj_hud_map.levelid = panel.levelid;
+            obj_hud_map.levelname = string_upper(panel.levelname);
+			obj_hud_map.levelid = panel.levelid;
 		}
         else {
 			
@@ -33,7 +29,7 @@ if (status == mapstate.idle)
 			if (!panel)
 			&& (x == xstart)
 			&& (y == ystart)
-				obj_hud_map.levelname = "START";
+				obj_hud_map.levelname = string_upper("Start");
 			else
 				obj_hud_map.levelname = "";
 		}
@@ -162,8 +158,8 @@ if (status == mapstate.idle)
 			if (status == mapstate.idle)
 			&& (input_check_pressed(input.action_1)) {
 			
-				//Play 'Character Swap' sound
-				audio_play_sound(snd_character_swap, 0, false);
+				//Play 'Open Path' sound
+				audio_play_sound(snd_pathreveal, 0, false);
 				
 				//Create 'Smoke' effect
 				instance_create_depth(x+8, y+8, -6, obj_smoke);
@@ -442,18 +438,6 @@ if (status == mapstate.idle)
 					else
 						boxselection = 1;
 				}
-				
-				//This is for the overflow items
-				if(boxselection < (list_pos+(margin+1)))
-					{
-						list_pos--;
-					}
-					if(boxselection >= (list_pos+length-(margin-1)))
-					{
-						list_pos++;
-					}
-					
-				list_pos = clamp(list_pos, 0, max(0,global.inventory[0]-length));
 			}
 		}
     }

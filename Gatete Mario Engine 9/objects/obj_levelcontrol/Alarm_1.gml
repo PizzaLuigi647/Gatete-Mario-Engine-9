@@ -1,4 +1,4 @@
-/// @description Stop music
+/// @description Stop the music
 
 //If the stream is playing
 if (audio_is_playing(global.stream)) {

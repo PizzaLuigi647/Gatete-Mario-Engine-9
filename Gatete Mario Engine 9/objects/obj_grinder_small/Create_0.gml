@@ -26,7 +26,7 @@ invulnerable = 0;
 state = "IDLE";
 
 //Speed
-spd = 1.5;
+spd = 2;
 st_spd = spd;
 
 //Origin

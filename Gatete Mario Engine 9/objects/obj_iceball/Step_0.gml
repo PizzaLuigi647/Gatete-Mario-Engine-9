@@ -7,7 +7,7 @@ prevxspeed = xspeed;
 swimming = false;
 
 //Inherit the parent event
-event_perform_object(obj_physicsparent, ev_step, ev_step_normal);
+event_inherited();
 
 //If there's no gravity, bounce
 if (yadd == 0) {

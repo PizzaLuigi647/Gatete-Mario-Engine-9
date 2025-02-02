@@ -14,7 +14,7 @@ if (global.restart == true) {
 }
 
 //Go to next screen
-with (obj_coordinator) alarm[3] = 180;
+with (obj_coordinator) alarm[3] = 240;
 
 //Create fade out transition
 instance_create_depth(0, 0, -99, obj_fade_out);

@@ -15,9 +15,9 @@ if (!track) {
 	//If Mario does not exist or it's at the left
 	if (!instance_exists(obj_mario))
 	|| (obj_mario.x < x)
-		hspeed = -1.5;
+		hspeed = -2;
 	else
-		hspeed = 1.5;
+		hspeed = 2;
 }
 
 //Otherwise

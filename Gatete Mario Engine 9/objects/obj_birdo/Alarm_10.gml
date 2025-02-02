@@ -1,8 +1,7 @@
 /// @description Start moving
 
 //If not shooting
-if (shooting == 0) 
-&& (invulnerable == false) {
+if (shooting == 0) {
 
 	//Animate
 	image_speed = 1;

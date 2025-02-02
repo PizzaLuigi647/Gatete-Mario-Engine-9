@@ -1,4 +1,4 @@
-/// @description Red Galoomba
+/// @description Galoomba
 
 //Inherit event
 event_inherited();

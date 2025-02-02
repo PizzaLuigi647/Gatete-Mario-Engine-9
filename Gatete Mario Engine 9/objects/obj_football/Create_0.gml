@@ -19,9 +19,6 @@ inwall = 0;
 //Follower
 follow = noone;
 
-//Ignore platforms
-ignore_platforms = true;
-
 //Whether this item has been kicked
 kicked = false;
 

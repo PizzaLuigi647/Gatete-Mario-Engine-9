@@ -1,12 +1,8 @@
-/// @description Coin logic
+/// @description Destroy when moving down
 
 //If hit with a pow block, apply physics
-if (ready == 1) {
-	
+if (ready == 1)
 	event_inherited();
-	if (ignore_platforms == true)
-		ignore_platforms = false;
-}
 
 //Otherwise, if collected
 else if (ready == 2) {

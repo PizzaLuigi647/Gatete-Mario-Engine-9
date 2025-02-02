@@ -1,8 +1,10 @@
 /// @description Gatete Mario Engine 9 Game Coordinator (This is required for the game to run, do not remove it.)
 
 //Set game caption
-#macro WINDOW_CAPTION "Gatete Mario Engine 9"
-window_set_caption(WINDOW_CAPTION);
+window_set_caption("Gatete Mario Engine 9");
+
+//Initialize Colour Swap Shader
+pal_swap_init_system();
 
 //Initialize global variables
 init_globals();
@@ -30,30 +32,20 @@ init_shockwave();
 	global.hp_mode = 0;
 	
 	//HP / Maximum Health (Sets the maximum hitpoints for Mario if health mode is active)
-	global.hp = 4;
-	global.hp_max = 4;
-	
-	//Luigi's Fireball motion (If enabled, Luigi's fireballs will move in a straight line instead of bouncing)
-	//false: Disabled
-	//true: Enabled
-	global.fireballtype = 0;
-	
-	//Resets combo when getting a 1-UP (Default: false)
-	//false: Disabled
-	//true: Enabled
-	global.combo_reset = false;
+	global.hp = 3;
+	global.hp_max = 3;
 
-	//Turn enemies into coins when hit with a fireball (Default: false)
-	//false: Disabled
-	//true: Enabled
+	//Turn enemies into coins when hit with a fireball
+	//0: Disabled
+	//1: Enabled
 	global.enemy_to_coin = false;
 	
-	//Makes Mario able or not able to perform his 3D moves (Default: true)
-	//false: Disabled
-	//true: Enabled
+	//Makes Mario able or not able to perform his 3D moves (Wall-Jump, Triple Jump, etc...)
+	//0: Disabled
+	//1: Enabled
 	global.special_moves = true;
 
-	//Makes Mario bounce on white note blocks from any side (Default: false)
+	//Makes Mario bounce on note blocks from any side
 	global.noteblock_all_sides = false;
 
 	//Flight time (In seconds, how much time allow Mario to fly as Raccoon/Tanooki Mario)
@@ -65,9 +57,9 @@ init_shockwave();
 	//Maximum amount of hearts (Overridden if health mode is activated)
 	global.safeguard_max = 3;
 
-	//Allow reserve of items if enabled (Default: true)
-	//false: Disabled
-	//true: Enabled
+	//Allow reserve of items if enabled
+	//0: Disabled
+	//1: Enabled
 	global.reserve_activated = true;
 
 	//Play P-meter sound?
@@ -249,7 +241,7 @@ init_shockwave();
 		
 		//Start / Select
 		start,
-		select
+		select,
 	}
 	
 #endregion
@@ -294,13 +286,6 @@ global.gh = room_height;
 //Checks if the game was restarted
 global.restart = false;
 
-//This is to make sure that the bars are not misplaced in title and credits room (If you set the game size other than the default one)
-room_set_width(rm_title,global.gw);
-room_set_height(rm_title,global.gh);
-
-room_set_width(rm_credits,global.gw);
-room_set_height(rm_credits,global.gh);
-
 //Data structure for picked up 3up moons
 global.moons = ds_map_create();
 
@@ -314,9 +299,6 @@ global.gui_font_numbers_large_gold = font_add_sprite_ext(spr_gui_font_numbers_la
 
 //Disable application surface automatic drawing
 application_surface_draw_enable(false);
-
-//Enables Borderless Fullscreen
-window_enable_borderless_fullscreen(true);
 
 //Set up epsilon for floating point numbers
 math_set_epsilon(0.00001);

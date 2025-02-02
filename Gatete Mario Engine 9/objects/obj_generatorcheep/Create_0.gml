@@ -9,9 +9,6 @@ noswim = 1;
 //Freeze object
 freeze_object = -2;
 
-//Ignore platforms
-ignore_platforms = true;
-
 //Double animation speed
 image_speed *= 2;
 

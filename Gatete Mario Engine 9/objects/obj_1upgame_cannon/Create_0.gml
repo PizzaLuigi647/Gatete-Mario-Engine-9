@@ -12,8 +12,3 @@ anim = 0;
 
 //Cannon angle
 angle = 90;
-
-//Parallax extra definitions
-camera_x = 0;
-camera_y = 0;
-bg_scroll[0] = 0;

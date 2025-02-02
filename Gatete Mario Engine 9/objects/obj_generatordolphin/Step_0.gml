@@ -1,8 +1,5 @@
 /// @description Dolphin logic
 
-//Ignore platforms
-ignore_platforms = true;
-
 //Manage pseudo movement variables
 if (freeze == false) {
 

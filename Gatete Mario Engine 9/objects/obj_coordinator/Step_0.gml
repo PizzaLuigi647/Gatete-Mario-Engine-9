@@ -16,11 +16,11 @@ update_shockwave();
 //Update timers
 timer_system_update();
 
-//Update Window Caption if it is not the correct caption
-if (window_get_caption() != WINDOW_CAPTION) {
-	
-	window_set_caption(WINDOW_CAPTION);
-}
+//Update Window Caption
+window_set_caption("Gatete Mario Engine 9")
+
+//Keep music looper active
+instance_activate_object(obj_audio_loop_sound);
 
 //Keep light control active
 instance_activate_object(obj_lightcontrol);
@@ -28,71 +28,42 @@ instance_activate_object(obj_lightcontrol);
 //Stay always at the front
 depth = -1000;
 
-//Resets combos if enabled
-#region
+//Music Pitch / Pause
+#region MUSIC PITCH
 
-	if (instance_exists(obj_levelcontrol)) {
+	//If the level controller exists, set pitch to default.
+	if (instance_exists(obj_mapcontrol))
+		pitch = 1;
 		
-		with (all) {
-	
-			//If the combo is higher
-			if (variable_instance_exists(id, "hitcombo"))
-			&& (hitcombo > 7)
-			&& (global.combo_reset == true)
-				hitcombo = 0;
-		}
-	}
-#endregion
-
-//Music Pitch / Pause / Volume
-#region
-
-	#region VOLUME
-	
-		//Manage Music volume
-		audio_group_set_gain(audiogroup_music, obj_coordinator.music_vol, 1);
+	else {
 		
-		//Manage Sound volume
-		audio_group_set_gain(audiogroup_default, obj_coordinator.sound_vol, 1);
-	#endregion
-
-	#region PITCH
-	
-		//If the level controller exists, set pitch to default.
-		if (instance_exists(obj_mapcontrol))
+		//If Mario has died or the level has been cleared, set to default.
+		if ((instance_exists(obj_mario_dead)) || (global.clear > 0))
 			pitch = 1;
-		
+			
+		//Otherwise
 		else {
 		
-			//If Mario has died or the level has been cleared, set to default.
-			if ((instance_exists(obj_mario_dead)) || (global.clear > 0))
-				pitch = 1;
-			
+			//If the timer is greater than 0 and lower than 100
+			if (global.timer > 0)
+			&& (global.timer < 101) {
+				
+				if (!instance_exists(obj_mario_balloon))
+					pitch = 1.33;
+				else
+					pitch = 1.13;
+			}
+				
 			//Otherwise
 			else {
-		
-				//If the timer is greater than 0 and lower than 100
-				if (global.timer > 0)
-				&& (global.timer < 101) {
 				
-					if (!instance_exists(obj_mario_balloon))
-						pitch = 1.33;
-					else
-						pitch = 1.13;
-				}
-				
-				//Otherwise
-				else {
-				
-					if (!instance_exists(obj_mario_balloon))
-						pitch = 1;
-					else
-						pitch = 0.8;
-				}
+				if (!instance_exists(obj_mario_balloon))
+					pitch = 1;
+				else
+					pitch = 0.8;
 			}
 		}
-	
-	#endregion
+	}
 	
 	#region PAUSE / RESUME
 

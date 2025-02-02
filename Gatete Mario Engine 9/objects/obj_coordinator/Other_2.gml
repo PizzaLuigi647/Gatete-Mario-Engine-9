@@ -1,9 +1,7 @@
-/// @description Load screen type, volume, colour blind mode, keys and vertical syncronization
+/// @description Load screen type, colour blind mode, keys and vertical syncronization
 
-//Initialize music group
-audio_group_load(audiogroup_music);
-
-#region LOAD SETTINGS
+//SETTINGS LOAD
+#region LOAD
 
 	var loadDefaultSettings = false;
 
@@ -13,22 +11,14 @@ audio_group_load(audiogroup_music);
 		//Load and read it
 		var file = file_text_open_read("settings.dat");
 		
-		try {
-			
+		try
+		{
 			//Set colourblind mode based on read value
 			colourblind = real(file_text_read_string(file));
 			file_text_readln(file);
 		
 			//Set fullscreen mode based on read value
 			fullscreen = real(file_text_read_string(file));
-			file_text_readln(file);
-			
-			//Set music volume based on read value
-			music_vol = real(file_text_read_string(file));
-			file_text_readln(file);
-			
-			//Set sound volume based on read value
-			sound_vol = real(file_text_read_string(file));
 			file_text_readln(file);
 		
 			//Set screen size based on read value
@@ -128,9 +118,8 @@ audio_group_load(audiogroup_music);
 		
 			#endregion
 		}
-		
-		catch(e) {
-			
+		catch(e)
+		{
 			loadDefaultSettings = true;
 			file_delete("settings.dat");
 		}
@@ -143,19 +132,13 @@ audio_group_load(audiogroup_music);
 	else
 		loadDefaultSettings = true;
 		
-	if (loadDefaultSettings) {
-		
+	if (loadDefaultSettings)
+	{
 		//Default colourblind value
 		colourblind = 0;
 	
 		//Default fullscreen value
 		fullscreen = 0;
-		
-		//Default music volume
-		music_vol = 0.5;
-		
-		//Default sound volume
-		sound_vol = 0.75;
 		
 		//Default window size
 		size = 2;

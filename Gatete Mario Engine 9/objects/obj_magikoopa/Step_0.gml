@@ -1,5 +1,7 @@
 /// @description Magikoopa Logic
 
+///Magikoopa logic
+
 //If the magikoopa is about to appear
 if (ready == 0) {
 
@@ -78,9 +80,6 @@ else if (ready == 3) {
             
             //Snap above the semisolid
             y = semisolid.bbox_top-16;
-			
-			//Play 'Magikoopa Appear' sound
-			audio_play_sound(snd_magikoopa_appear, 0, false);
             
             //Prepare spell
             ready = 0; 

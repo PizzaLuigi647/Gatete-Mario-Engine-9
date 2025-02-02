@@ -63,7 +63,6 @@ KlumTheGreatHero
 Kopejo
 Leanycat
 Mariofan230
-PROX
 RakoonCD
 Random Talking Bush
 Sednaiur
@@ -92,14 +91,10 @@ TheMushroomKingdom.net
 
 DJ Coco
 Dooki51
-Enjl
 HelloFangaming
 Hypernova
-MrDoubleA
 PixelatedPope
 Shaun Spalding
-TarkanDragonBird
-WinMithul (Matrix)
 YellowAfterLife
 
 
@@ -108,9 +103,7 @@ YellowAfterLife
 
 Bugsie
 Karasz (Crispy Toast)
-TarkanDragonBird
 Vexxter
-WinMithul (Matrix)
 
 
 
@@ -118,7 +111,7 @@ WinMithul (Matrix)
 
 BROBRO STUDIOS
 CLUB SATURN
-COMUNIDADJUANPA
+COMUNIDAD GM
 CONFUZYON STUDIOS
 HONK SQUAD
 LEVEL SHARE SQUARE

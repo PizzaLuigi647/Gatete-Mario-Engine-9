@@ -1,7 +1,7 @@
 /// @description Parachute Galoomba logic
 
 //Inherit event
-event_perform_object(obj_physicsparent, ev_step, ev_step_normal);
+event_inherited();
 
 //Begin landing sequence
 if (yadd == 0) {
@@ -29,11 +29,13 @@ if (yadd == 0) {
             ready = 2;               
             
             //Turn into a galoomba
-            alarm[0] = 15;
+            alarm[0] = 30;
         }
     }
 }
+else {
 
-//Cap vertical speed
-if (yspeed > 0.5)
-	yspeed = 0.5;
+	//Cap vertical speed
+	if (yspeed > 0.5)
+		yspeed = 0.5;
+}

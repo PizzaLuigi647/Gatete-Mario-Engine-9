@@ -4,7 +4,7 @@
 event_inherited();
 
 //Set vertical speed
-yspeed = (global.fireballtype == 1 && global.player == 1) ? 0 : 3;
+yspeed = 3;
 
 //No bounces
 bounces = -1;

@@ -1,8 +1,5 @@
 /// @description Used Question Block
 
-//Is this block semisolid?
-semisolid = false;
-
 //Depth
 depth = 9;
 

@@ -49,5 +49,5 @@
     "path":"sprites/spr_enemy_generator/spr_enemy_generator.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
