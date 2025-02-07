@@ -8,10 +8,10 @@ draw_set_font(global.gui_font_menu);
 	#region ALPHA / ANIM
 	
 		//Update alpha
-		alpha += (sub_menu == 0) ? -0.0125 : 0.0125;
+		alpha += (sub_menu < 2) ? -0.0125 : 0.0125;
 		
 		//Update title y position
-		yy = (sub_menu == 0) ? lerp(yy, 0, 0.1) : lerp(yy, 96, 0.1);
+		yy = (sub_menu < 2) ? lerp(yy, 0, 0.1) : lerp(yy, 96, 0.1);
 		
 		//Update anim
 		anim += 0.5;
@@ -31,7 +31,7 @@ draw_set_font(global.gui_font_menu);
 #region TITLE
 
 	//Draw title
-	draw_sprite_ext(spr_title, 0, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + 64 - yy, 0.5, 0.5, 0, c_white, 1);
+	draw_sprite_ext(spr_title, 0, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + 64 - yy, (global.gw/sprite_get_width(spr_title)), (global.gw/sprite_get_width(spr_title)), 0, c_white, 1);
 #endregion
 
 #region MENU
@@ -64,13 +64,13 @@ else if (start == 1) {
 	var _yy = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) - 24 - (_gap * array_length_2d(menu, sub_menu));
 
 	//Draw menu items
-	for (var i=0; i<array_length_2d(menu, sub_menu); ++i) { 
+	for (var i=0; i<array_length(menu[sub_menu]); ++i) { 
 	
 		//Sets the colour of the highlighted option
 		var _colour = (i == index) ? c_white : c_ltgray;
 	
 		//Draw the text
-		draw_text_shadowed(camera_get_view_x(view_camera[0]) + 32, _yy + (_gap * i), string_upper(menu[sub_menu, i]), c_black, _colour, 1, 1, 0.5, 1);
+		draw_text_shadowed(camera_get_view_x(view_camera[0]) + 32, _yy + (_gap * i), menu[sub_menu, i], c_black, _colour, 1, 1, 0.5, 1);
 	
 		//Draw cursor
 		if (i == index) {
@@ -83,9 +83,9 @@ else if (start == 1) {
 	draw_set_halign(fa_right);
 
 	//Draw keys
-	if (sub_menu == 2) {
+	if (sub_menu == 3) {
 
-		for (var i=0; i<array_length_1d(key); ++i) {
+		for (var i=0; i<array_length(key); ++i) {
 	
 			//Sets the colour of the highlighted option
 			var _colour = (i == index) ? c_white : c_ltgray;
@@ -110,5 +110,5 @@ else if (start == 1) {
 
 //Draw copyright and reset horizontal text alignment
 draw_set_halign(fa_center);
-draw_text_shadowed(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) - 24 + (yy / 2), string_upper("2023 GREEN BARON GAMES \nMARIO IS (C) FROM NINTENDO"), c_black, c_white, 1, 1, 0.5, 1);
+draw_text_shadowed(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) - 24 + (yy / 2), "MARIO IS (C) FROM NINTENDO\n2023-2025 GREEN BARON GAMES", c_black, c_white, 1, 1, 0.5, 1);
 draw_set_halign(fa_left);

@@ -27,6 +27,11 @@ gswitch_warn = 0;
 //Create HUD
 instance_create_layer(0, 0, "GUI", obj_hud);
 
+//Parallax extra definitions
+camera_x = 0;
+camera_y = 0;
+bg_scroll[0] = 0;
+
 //Shake variables
 shake_intensity = 0;
 shake_time = 0;
@@ -37,6 +42,9 @@ shake_starttime = 0;
 
 //Shmup mode
 shmup_mode = 0;
+
+//Tick counter in level
+tick = 0;
 
 //Create reverb effect and modify properties
 _ef_reverb = audio_effect_create(AudioEffectType.Reverb1);

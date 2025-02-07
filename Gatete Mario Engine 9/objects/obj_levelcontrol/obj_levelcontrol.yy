@@ -62,6 +62,7 @@
     {"$GMObjectProperty":"v1","%Name":"level_palette","filters":[],"listItems":[],"multiselect":false,"name":"level_palette","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"lava_palette","filters":[],"listItems":[],"multiselect":false,"name":"lava_palette","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"turnip_type","filters":[],"listItems":[],"multiselect":false,"name":"turnip_type","rangeEnabled":true,"rangeMax":9.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"bg_is_animated","filters":[],"listItems":[],"multiselect":false,"name":"bg_is_animated","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

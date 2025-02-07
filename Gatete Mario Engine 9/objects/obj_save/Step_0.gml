@@ -1,8 +1,8 @@
 /// @description Manage menu choices and unpause
 
 //Get key inputs
-var _up		= input_check_pressed(input.up) || gamepad_axis_value(0, gp_axislv) < 0;
-var _down	= input_check_pressed(input.down) || gamepad_axis_value(0, gp_axislv) > 0;
+var _up		= input_check_pressed(input.up);
+var _down	= input_check_pressed(input.down);
 var _select = input_check_pressed(input.action_0);
 
 //Decrement delay
@@ -64,7 +64,7 @@ if (scale_type == 1) {
 		delay = 8;
 	
 		//Clamp values
-		var _size = array_length_1d(menu);
+		var _size = array_length(menu);
 		if (index < 0)
 			index = _size - 1;
 		else if (index >= _size)

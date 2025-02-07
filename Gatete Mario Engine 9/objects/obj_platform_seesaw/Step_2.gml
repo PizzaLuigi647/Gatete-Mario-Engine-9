@@ -1,13 +1,16 @@
 /// @description Make the seesaw tilt
 
 //Update slope increment variable
-add = (dsin(image_angle) * 0.21) * - 1;
+add = (dsin(image_angle) * 0.162) * - 1;
 
 //Update extra
 extra = 20+(abs(image_angle) / 20);
 
 //Radius
 radius = (sprite_width / 2 + sprite_height / 2) - 8;
+
+//Volt direction
+dir = (angle < 0) ? -1 : 1;
 
 #region LOGIC
 
@@ -32,9 +35,12 @@ radius = (sprite_width / 2 + sprite_height / 2) - 8;
 					&& (obj_mario.bbox_bottom < bbox_bottom+4) {
 						
 						//Make the engine move if it is not moving
-						if (parent.state == "IDLE") {
+						if (parent != noone) {
+							
+							if (parent.state == "IDLE") {
 						
-							parent.state = "IN_LINE";
+								parent.state = "IN_LINE";
+							}
 						}
 					
 						//Calculate distance

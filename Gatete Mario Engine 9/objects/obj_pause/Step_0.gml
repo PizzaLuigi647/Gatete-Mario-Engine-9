@@ -1,8 +1,8 @@
 /// @description Manage menu choices and unpause
 
 //Get key inputs
-var _up		= input_check_pressed(input.up) || gamepad_axis_value(0, gp_axislv) < 0;
-var _down	= input_check_pressed(input.down) || gamepad_axis_value(0, gp_axislv) > 0;
+var _up		= input_check_pressed(input.up);
+var _down	= input_check_pressed(input.down);
 var _select = input_check_pressed(input.action_0);
 var _pause  = input_check_pressed(input.start);
 
@@ -94,7 +94,7 @@ if (scale_type == 1) {
 		delay = 8;
 	
 		//Clamp values
-		var _size = array_length_1d(menu);
+		var _size = array_length(menu);
 		if (index < 0)
 			index = _size - 1;
 		else if (index >= _size)
@@ -121,9 +121,19 @@ if (scale_type == 1) {
 			//Options
 			case (1): {
 			
-				//If the level has not been beaten yet, play 'Wrong' sound.
-				if (global.beaten == false)
-					audio_play_sound(snd_wrong, 0, false);
+				//If the level has not been beaten yet, kill Mario
+				if (global.beaten == false) {
+					
+					//Play 'Coin' sound
+					audio_play_sound(snd_coin, 0, false);
+	
+					//Set scale type
+					scale_type = 2;
+					io_clear();
+					
+					//Kill Mario
+					kill_me = 1;
+				}
 					
 				//Otherwise, if the level has been beaten
 				else {

@@ -40,6 +40,9 @@ function pswitch_event() {
 		//Make P-Coins visible
 		with (obj_coin_p) visible = true;
 		
+		//Make P-Star Coins visible
+		with (obj_coin_star_p) visible = true;
+		
 		//Turn off conveyors
 		with (obj_conveyor_r) image_speed = 0;
 		with (obj_conveyor_l) image_speed = 0;
@@ -62,6 +65,10 @@ function pswitch_event() {
 		//Create blue trampolines
 		with (obj_trampoline_switch)		
 			instance_create_layer(x, y, "Main", obj_trampoline_switch_activated);
+			
+		//Create blue keys
+		with (obj_key_switch)		
+			instance_create_layer(x, y, "Main", obj_key_switch_activated);
 	}
 	
 	//Otherwise
@@ -94,8 +101,11 @@ function pswitch_event() {
 			instance_destroy();
 		}
 		
-		//Make P-Coins visible
+		//Make P-Coins invisible
 		with (obj_coin_p) visible = false;
+		
+		//Make P-Star Coins invisible
+		with (obj_coin_star_p) visible = false;
 		
 		//Turn on conveyors
 		with (obj_conveyor_r) image_speed = belt_power;
@@ -123,5 +133,8 @@ function pswitch_event() {
 		
 		//Destroy all blue trampoline
 		with (obj_trampoline_switch_activated) instance_destroy();
+		
+		//Destroy all blue key
+		with (obj_key_switch_activated) instance_destroy();
 	}
 }

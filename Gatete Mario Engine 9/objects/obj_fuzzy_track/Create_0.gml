@@ -13,6 +13,9 @@ edible = 0;
 hp = 0;
 firehp = 0;
 
+//Ignore Platforms
+ignore_platforms = true;
+
 //Makes the NPC invulnerable to projectiles after being hit by one
 invulnerable = 0;
 
@@ -41,6 +44,12 @@ direct = 270;
 
 //Facing direction
 xscale = 1;
+
+//Freeze Sprite
+freeze_sprite = -1;
+
+//Freeze Object
+freeze_object = -1;
 
 //Start moving
 alarm[10] = 2;

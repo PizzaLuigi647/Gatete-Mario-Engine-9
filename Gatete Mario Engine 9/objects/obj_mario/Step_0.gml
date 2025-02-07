@@ -328,7 +328,7 @@ if (enable_gravity == 1) {
 	if (yspeed >= 0) {
 
 		//Check for any nearby ground collision
-		var semisolid = collision_rectangle(bbox_left, bbox_bottom+1, bbox_right, bbox_bottom+yspeed, obj_semisolid, 0, 0);
+		var semisolid = collision_rectangle(bbox_left, bbox_bottom+1, bbox_right, bbox_bottom+yspeed, [obj_semisolid, obj_platformparent], 0, 0);
 	
 		//If there's ground below and Mario is not moving upwards
 		if (semisolid)
@@ -346,6 +346,7 @@ if (enable_gravity == 1) {
 			//Reset values
 			event_user(15);
 		}
+		
 		
 		//Check for a subcon enemy
 		var subcon = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+yspeed, obj_enemy_top, 0, 0);
@@ -1132,8 +1133,8 @@ if (yspeed == 0)
 }
     
 //Prevent the player from going too high on the level
-if (y < -96)
-    y = -96;
+if (y < -48)
+    y = -48;
         
 //Otherwise, if he is falling.
 else {

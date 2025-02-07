@@ -10,7 +10,7 @@ with (obj_levelcontrol) {
     pswitch_warn = 0;
         
     //Restart timer
-    alarm[5] = 400;
+    alarm[5] = 60 * other.time;
         
     //Activate p-switch effect
 	event_user(5);

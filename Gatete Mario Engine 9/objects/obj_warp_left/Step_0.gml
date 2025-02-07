@@ -25,9 +25,12 @@ if (global.powerup != cs_mega) {
         
 	            //Play 'Warp' sound
 	            audio_play_sound(snd_warp, 0, false);
-        
+				
+				//Set Y based on powerup
+				var myy = ((global.powerup == cs_tiny) && (mini == true)) ? 8 : 16;
+				
 	            //Create a new warp player object
-	            warpme = instance_create_depth(x - 5, y+16, 150, obj_mario_warp);
+	            warpme = instance_create_depth(x - 5, y + myy, 150, obj_mario_warp);
             
 	            //Facing direction
 	            warpme.image_xscale = player.xscale;
@@ -42,13 +45,8 @@ if (global.powerup != cs_mega) {
 	            warpme.direction = 0;
             
 	            //Set up destination room
-				if (destination != noone) {
-					
-					warpme.destination = destination;
-				}
-            
-		        //Start warp
-		        warpme.alarm[0] = 32;
+				warpme.destination = (destination == noone) ? noone : destination;
+				warpme.alarm[0] = 32;
             
 	            //Set up warp parameters
 	            warpme.exit_dir = exit_dir;
